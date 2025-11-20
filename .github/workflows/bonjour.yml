@@ -1,11 +1,12 @@
 name: Bonjour
 on:
   - push
-jobs:
+jobs.container.options:
   dire_bonjour:
     runs-on: ubuntu-24.04
+    container:
+      image: ghcr.io/cicd-lectures/gitpod:latest
     steps:
       - uses: actions/checkout@v5
-      - run: sudo apt-get install cowsay
-      - run: ls -l  
+      - run: ls -l
       - run: cat README.md | cowsay
