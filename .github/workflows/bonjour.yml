@@ -7,8 +7,8 @@ jobs:
     steps:
       - run: ls -l
       - run: cat README.md 
-uses: actions/checkout@v5
-with:
-  sparse-checkout: |
-    README.md
-  sparse-checkout-cone-mode: false
+  uses: actions/checkout@v5 
+  with:
+    sparse-checkout: |
+      README.md
+    sparse-checkout-cone-mode: false
