@@ -1,7 +1,7 @@
 name: Bonjour
 on:
   - push
-jobs.container.options:
+jobs<0>.container.options:
   dire_bonjour:
     runs-on: ubuntu-24.04
     container:
