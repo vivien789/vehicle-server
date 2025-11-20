@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v5
-      - run: apt-get install cowsay
+      - run: sudo apt-get install cowsay
       - run: ls -l  
       - run: cat README.md | cowsay
