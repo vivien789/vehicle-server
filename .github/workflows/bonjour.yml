@@ -2,7 +2,7 @@ name: Bonjour
 on:
   - push
 jobs:
-  dire_bonjour.container.options:
+  bonjour.container.options:
     runs-on: ubuntu-24.04
     container:
       image: ghcr.io/cicd-lectures/gitpod:latest
