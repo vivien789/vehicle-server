@@ -8,14 +8,9 @@ jobs:
       image: ghcr.io/cicd-lectures/gitpod:latest
       options: --user=root
     steps:
-      - uses: actions/checkout@v5
-      - run: ls -l
-
-      - name: cowsay
-        id: cosway_output_id
-        run: cat README.md | cowsay
-        with:
-          path: ./README.md 
-
-      - name: Echo package.json
-        run: echo "${{ steps.cowsay_output_id.outputs.cowsay }}"
+    - uses: actions/checkout@v5
+    - uses: actions/setup-node@v6
+      with:
+        node-version: 24
+    - run: npm ci
+    - run: npm test
