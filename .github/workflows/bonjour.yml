@@ -10,4 +10,12 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - run: ls -l
-      - run: cat README.md | cowsay
+
+      - name: cowsay
+        id: cosway_output_id
+        run: cat README.md | cowsay
+        with:
+          path: ./README.md 
+
+      - name: Echo package.json
+        run: echo "${{ steps.cowsay_output_id.outputs.cowsay }}"
