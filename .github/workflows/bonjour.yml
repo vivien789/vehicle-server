@@ -5,13 +5,11 @@ on:
 jobs:
   dire_bonjour:
     runs-on: ubuntu-24.04
-    container:
-      image: ghcr.io/cicd-lectures/gitpod:latest
-      options: --user=root
     steps:
-    - uses: actions/checkout@v5
-    - uses: actions/setup-node@v6
-      with:
-        node-version: 24
-    - run: npm ci
-    - run: npm run build
+      - name: Checkout du code
+        uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm run build
