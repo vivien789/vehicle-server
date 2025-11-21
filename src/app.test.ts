@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-misused-promises, -- supertest forces us to use any */
-
 import { describe, beforeAll, afterAll, beforeEach, afterEach, test } from '@jest/globals';
 import { Express } from 'express';
 import { Pool } from 'pg';
