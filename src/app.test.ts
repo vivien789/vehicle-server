@@ -71,9 +71,9 @@ describe('vehicle server', () => {
     expect(response.statusCode).toBe(200);
     expect(response.body.vehicles.map((v: Vehicle) => v.shortcode)).toEqual(['cdef', 'abcd', 'ghij']);
     expect(response.body.vehicles.map((v: Vehicle) => v.position)).toEqual([
-      {longitude: -70.060316, latitude: 49.432044},
-      {longitude: -71.060316, latitude: 48.432044},
-      {longitude: -74.060316, latitude: 49.432044},
+      {latitude: -70.060316, longitude: 49.432044},
+      {latitude: -71.060316, longitude: 48.432044},
+      {latitude: -74.060316, longitude: 49.432044},
     ]);
   });
 })
