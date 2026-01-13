@@ -1,12 +1,16 @@
-const { program } = require('commander');
+import { Command } from 'commander';
+const program = new Command();
+
 
 program
-  .option('--first')
-  .option('-s, --separator <char>')
-  .argument('<string>');
-
-program.parse();
+  .option('--id <number>', 'vehicle id')
+  .option('--sc, --shortcode <string>', 'vehicle code')
+  .option('-b, --battery <number>', 'vehicle battery')
+  .option('-p, --position <Position>', 'vehicle position (lng, lat)')
+  
 
 const options = program.opts();
-const limit = options.first ? 1 : undefined;
-console.log(program.args[0].split(options.separator, limit));
+console.log(options);
+
+//Test
+//node split.js --id 12 --sc 'abc' -b 16 -p {latitude: -70.060316, longitude: 49.432044}
